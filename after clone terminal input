@@ -1,2 +1,5 @@
 cd MEEN305_Project1_Team7 
 >> code .
+# add this after using the above input
+git config --global user.name "Their Full Name"
+git config --global user.email "theirgithubemail@example.com"
