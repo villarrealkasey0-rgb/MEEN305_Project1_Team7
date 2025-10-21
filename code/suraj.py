@@ -15,3 +15,12 @@ Support_A = Load - Support_B
 
 print("Reaction at Support A =", Support_A, "lbs")
 print("Reaction at Support B =", Support_B, "lbs")
+
+#Material Properties for PLA 
+
+#Young's modulus (GPa)
+E = 3.5
+
+#Ultimate Tensile Strength (MPa)
+#PLA does not have a yield strength 
+Y = 50
