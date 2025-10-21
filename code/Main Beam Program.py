@@ -1,0 +1,12 @@
+# main_beam_program.py
+from Subfunctions import beam_analysis
+
+print("=== MEEN 305 Beam Analysis Program ===")
+
+# User inputs
+L = float(input("Enter span length (in): "))
+P = float(input("Enter load (lb): "))
+a = float(input("Enter distance from support A (in): "))
+
+# Run the beam analy5sis
+beam_analysis(L, P, a)
