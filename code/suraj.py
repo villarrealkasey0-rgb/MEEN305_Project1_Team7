@@ -1,4 +1,4 @@
-#Statics 
+6#Statics 
 
 Load = float(input("enter the load in lbs: "))
 Distance = float(input("enter the distance at which the load applied at from support A in inches: "))
