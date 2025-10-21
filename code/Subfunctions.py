@@ -6,8 +6,8 @@ def beam_analysis(L, P, a):
 
     # Input validation
     # ===============================
-    if L <= 0:
-        print("Error: Span length must be positive.")
+    if L <= 0 or L > 9:
+        print("Error: Span length must be positive and less than or equal to 9 in.")
         exit()
 
     if P <= 0:
