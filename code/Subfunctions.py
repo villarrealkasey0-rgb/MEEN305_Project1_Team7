@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Beam Analysis
+# Beam Analysis YAY
 # ===============================
 def beam_analysis(L, P, a, nx = 401):
 
