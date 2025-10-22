@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+
 # Beam Analysis
 # ===============================
-def beam_analysis(L, P, a):
+def beam_analysis(L, P, a, nx = 401):
 
     # Input validation
     # ===============================
@@ -18,8 +19,17 @@ def beam_analysis(L, P, a):
         print("Error: The load position 'a' must be between 0 and L (within the beam span).")
         exit()
 
+    # Reactions
     RA = P * (L-a) / L
     RB = P * a / L
 
-    print(f'\nReaction at A = {RA:.2f} lb')
-    print(f'\nReaction at B = {RB:.2f} lb')
+    # Shear & Moment
+    x = np.linspace(0.0, L, nx)
+    V = np.where(x < a, RA, RA - P)
+    M = np.where(x < a, RA * x, RA * x - P * (x-a))
+
+    return x, V, M, RA, RB
+        
+    
+
+
