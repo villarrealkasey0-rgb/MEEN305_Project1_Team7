@@ -1,4 +1,3 @@
-import numpy as np
 import sympy as sp
 from sympy.plotting import (plot,plot_parametric)
 
@@ -40,7 +39,7 @@ FoS_rect = Y / vm_rect
 
 if rectangular:
     plot(vm_rect, (x, 0, 5), title="Sample vm stress of rectangle", xlabel="x", ylabel="Von Mises")
-    plot(FoS_rect, (x, 0, 5), title="Sample FoS of rectangle", xlabel="x", ylabel="Von Mises")
+    plot(FoS_rect, (x, 0, 5), title="Sample FoS of rectangle", xlabel="x", ylabel="FoS")
 elif solid_circular:
     print("todo")
 elif I_beam:
