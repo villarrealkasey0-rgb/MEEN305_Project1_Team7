@@ -1,7 +1,7 @@
 # main_beam_program.py
 from subfunctions import beam_analysis
 from plot_functions import plot_shear_moment
-from section_props_team import rectangular_props, circular_props, square_tube_props, ibeam_props
+from section_props_team import rectangular_props, circular_props, square_tube_props, ibeam_props, check_valid_hole
 import numpy as np
 
 def main():
@@ -13,8 +13,12 @@ P = float(input("Enter load (lb): "))
 a = float(input("Enter distance from support A (in): "))
 
 
+shape_type = input("\nEnter cross-section type (rectangular / circular / tube / ibeam): ").strip().lower()
+
+
 # Hole configuration
 has_holes = input("Does the beam have holes? (yes/no): ").strip().lower()
+
 
 if has_holes == "yes":
     n_holes = int(input("Enter number of holes: "))
@@ -32,7 +36,7 @@ else:
     x_start = 0.0
     x_end = 0.0
 
-shape_type = input("\nEnter cross-section type (rectangular / circular / tube / ibeam): ").strip().lower()
+
 
 # Geometry input based on shape
 x = np.linspace(0, L, 200)   # x-positions along beam
