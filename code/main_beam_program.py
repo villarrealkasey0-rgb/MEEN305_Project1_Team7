@@ -7,7 +7,7 @@ import numpy as np
 def main():
     print("=== MEEN 305 Beam Analysis Program ===")
 
-# User inputs
+# User inputs 
 L = float(input("Enter span length (in): "))
 P = float(input("Enter load (lb): "))
 a = float(input("Enter distance from support A (in): "))
