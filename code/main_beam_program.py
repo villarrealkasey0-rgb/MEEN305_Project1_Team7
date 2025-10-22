@@ -13,15 +13,15 @@ P = float(input("Enter load (lb): "))
 a = float(input("Enter distance from support A (in): "))
 
     # Run the beam analysis
-    x, V, M, RA, RB = beam_analysis(L, P, a)
+x, V, M, RA, RB = beam_analysis(L, P, a)
 
-    # Print reactions
-    print(f'\nReactions:')
-    print(f"  RA = {RA:.3f} lb")
-    print(f"  RB = {RB:.3f} lb")
+# Print reactions
+print(f'\nReactions:')
+print(f"  RA = {RA:.3f} lb")
+print(f"  RB = {RB:.3f} lb")
 
-    # Plot shear & moment diagrams 
-    plot_shear_moment(x,V,M,a)
+# Plot shear & moment diagrams 
+plot_shear_moment(x,V,M,a)
 
 if __name__ == "__main__":
     main()
