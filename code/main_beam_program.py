@@ -27,14 +27,15 @@ if has_holes == "yes":
     x_end = float(input("Enter x-location where holes end (in): "))
     
     #check if holes are imposssible
-    check_valid_hole(shape_type, b0=b0, h0=h0, d0=d0)
+    #check_valid_hole(shape_type, b0=b0, h0=h0, d0=d0)
+    #checking else where, after shape type
 
 else:
     # no holes, set everything to zero
     n_holes = 0
     d_hole = 0.0
-    x_start = 0.0
-    x_end = 0.0
+    x_start = float("inf")  # keep outside the domain so your plots' dashed lines don't show
+    x_end   = float("-inf") # (or set both to 0 if you prefer)
 
 
 
@@ -47,11 +48,18 @@ if shape_type == "rectangular":
     h0 = float(input("Enter starting height h0 (in): "))
     hL = float(input("Enter ending height hL (in): "))
 
+    # validate holes only AFTER b0/h0 exist
+    if has_holes == "yes":
+        check_valid_hole("rectangular", b0=b0, h0=h0, d_hole=d_hole)
+
     A, Iz, S = rectangular_props(L, x, b0, bL, h0, hL, d_hole, n_holes, x_start, x_end)
 
 elif shape_type == "circular":
     d0 = float(input("Enter starting diameter d0 (in): "))
     dL = float(input("Enter ending diameter dL (in): "))
+
+    if has_holes == "yes":
+        check_valid_hole("circular", d0=d0, d_hole=d_hole)
 
     A, Iz, S = circular_props(L, x, d0, dL, d_hole, n_holes, x_start, x_end)
 
@@ -60,6 +68,9 @@ elif shape_type == "tube":
     bL = float(input("Enter ending outer width bL (in): "))
     t0 = float(input("Enter starting wall thickness t0 (in): "))
     tL = float(input("Enter ending wall thickness tL (in): "))
+
+    if has_holes == "yes":
+        check_valid_hole("tube", b0=b0, d_hole=d_hole)
 
     A, Iz, S = square_tube_props(L, x, b0, bL, t0, tL, d_hole, n_holes, x_start, x_end)
 
@@ -72,6 +83,9 @@ elif shape_type == "ibeam":
     twL = float(input("Enter web thickness twL (in): "))
     h0 = float(input("Enter total height h0 (in): "))
     hL = float(input("Enter total height hL (in): "))
+
+    if has_holes == "yes":
+        check_valid_hole("ibeam", h0=h0, d_hole=d_hole)
 
     A, Iz, S = ibeam_props(L, x, bf0, bfL, tf0, tfL, tw0, twL, h0, hL, d_hole, n_holes, x_start, x_end)
 
