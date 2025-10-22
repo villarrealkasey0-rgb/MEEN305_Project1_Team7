@@ -1,6 +1,6 @@
 # main_beam_program.py
-from Subfunctions import beam_analysis
-from Plot Functions import plot_shear_moment
+from subfunctionsubfunctions import beam_analysis
+from plot_functionstFunctions import plot_shear_moment
 
 print("=== MEEN 305 Beam Analysis Program ===")
 
