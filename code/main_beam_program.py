@@ -7,7 +7,7 @@ import numpy as np
 def main():
     print("=== MEEN 305 Beam Analysis Program ===")
 
-# User inputs 
+# User inputs
 L = float(input("Enter span length (in): "))
 P = float(input("Enter load (lb): "))
 a = float(input("Enter distance from support A (in): "))
@@ -93,21 +93,19 @@ else:
     print("\n❌ Invalid shape type entered — exiting.\n")
     exit()
 
-##from plot_functions import plot_section_props
+from section_props_team import plot_section_props
 
 # Plot geometry-related results
 plot_section_props(x, A, Iz, S, x_start, x_end)
 # test commit
 
-    # Run the beam analysis
+# Resluts Here:------------Beam Reactions------------
 x, V, M, RA, RB = beam_analysis(L, P, a)
-
-# Print reactions
 print(f'\nReactions:')
-print(f"  RA = {RA:.3f} lb")
+print(f"  RA =k. k. {RA:.3f} lb")
 print(f"  RB = {RB:.3f} lb")
 
-# Plot shear & moment diagrams 
+# Plot Calls Here:------------Shear & Moment Diagrams------------ 
 plot_shear_moment(x,V,M,a)
 
 if __name__ == "__main__":
