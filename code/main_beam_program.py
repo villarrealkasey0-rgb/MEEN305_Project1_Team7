@@ -1,7 +1,7 @@
 # main_beam_program.py
 from subfunctions import beam_analysis
 from plot_functions import plot_shear_moment
-from section_props_team import rectangular_props, circular_props, square_tube_props, ibeam_props, check_valid_hole
+from section_props_team import rectangular_props, circular_props, square_tube_props, ibeam_props, check_valid_hole, plot_section_props
 import numpy as np
 
 def main():
@@ -93,7 +93,7 @@ else:
     print("\n❌ Invalid shape type entered — exiting.\n")
     exit()
 
-from plot_functions import plot_section_props
+##from plot_functions import plot_section_props
 
 # Plot geometry-related results
 plot_section_props(x, A, Iz, S, x_start, x_end)
